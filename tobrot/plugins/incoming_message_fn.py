@@ -41,14 +41,14 @@ async def incoming_purge_message_f(client, message):
     await i_m_sefg2.delete()
 
 async def incoming_message_f(client, message):
-    """/leech command"""
+    """/eat command"""
     i_m_sefg = await message.reply_text("processing", quote=True)
     is_zip = False
     if len(message.command) > 1:
         if message.command[1] == "archive":
             is_zip = True
     # get link from the incoming message
-    dl_url, cf_name, _, _ = await extract_link(message.reply_to_message, "LEECH")
+    dl_url, cf_name, _, _ = await extract_link(message.reply_to_message, "EAT")
     LOGGER.info(dl_url)
     LOGGER.info(cf_name)
     if dl_url is not None:
