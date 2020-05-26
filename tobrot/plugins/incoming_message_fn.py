@@ -41,14 +41,14 @@ async def incoming_purge_message_f(client, message):
     await i_m_sefg2.delete()
 
 async def incoming_message_f(client, message):
-    """/leech command"""
+    """/leech@ieat1337xbot command"""
     i_m_sefg = await message.reply_text("processing", quote=True)
     is_zip = False
     if len(message.command) > 1:
         if message.command[1] == "archive":
             is_zip = True
     # get link from the incoming message
-    dl_url, cf_name, _, _ = await extract_link(message.reply_to_message, "LEECH")
+    dl_url, cf_name, _, _ = await extract_link(message.reply_to_message, "LEECH@IEAT1337")
     LOGGER.info(dl_url)
     LOGGER.info(cf_name)
     if dl_url is not None:
@@ -86,12 +86,12 @@ async def incoming_message_f(client, message):
 
 
 async def incoming_youtube_dl_f(client, message):
-    """ /ytdl command """
+    """ /ytdl@ieat1337xbot command """
     i_m_sefg = await message.reply_text("processing", quote=True)
     # LOGGER.info(message)
     # extract link from message
     dl_url, cf_name, yt_dl_user_name, yt_dl_pass_word = await extract_link(
-        message.reply_to_message, "YTDL"
+        message.reply_to_message, "YTDL@IEAT1337"
     )
     LOGGER.info(dl_url)
     LOGGER.info(cf_name)
