@@ -80,7 +80,7 @@ async def incoming_message_f(client, message):
             await i_m_sefg.edit_text(err_message)
     else:
         await i_m_sefg.edit_text(
-            "Nah, ethu thenga?. \nPlease read /help \n"
+            "**enthu tholviyado**! \n reply to a magnet or any other link \n"
             f"<b>API Error</b>: {cf_name}"
         )
 
@@ -126,6 +126,6 @@ async def incoming_youtube_dl_f(client, message):
             )
     else:
         await i_m_sefg.edit_text(
-            "**FCUK**! wat have you entered. \nPlease read /help \n"
+            "**enthu tholviyado**! \n reply to a youtube or any other video link \n"
             f"<b>API Error</b>: {cf_name}"
         )
