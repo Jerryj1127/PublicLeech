@@ -48,7 +48,7 @@ async def incoming_message_f(client, message):
         if message.command[1] == "archive":
             is_zip = True
     # get link from the incoming message
-    dl_url, cf_name, _, _ = await extract_link(message.reply_to_message, "LEECH@IEAT1337")
+    dl_url, cf_name, _, _ = await extract_link(message.reply_to_message, "ANUMOL69")
     LOGGER.info(dl_url)
     LOGGER.info(cf_name)
     if dl_url is not None:
@@ -80,7 +80,7 @@ async def incoming_message_f(client, message):
             await i_m_sefg.edit_text(err_message)
     else:
         await i_m_sefg.edit_text(
-            "**enthu tholviyado**! \n reply to a magnet or any other link \n"
+            "**Hurray**! \n You just discoverd an easter egg!!  \n"
             f"<b>API Error</b>: {cf_name}"
         )
 
@@ -91,7 +91,7 @@ async def incoming_youtube_dl_f(client, message):
     # LOGGER.info(message)
     # extract link from message
     dl_url, cf_name, yt_dl_user_name, yt_dl_pass_word = await extract_link(
-        message.reply_to_message, "YTDL@IEAT1337"
+        message.reply_to_message, "WAKANDAFOREVER"
     )
     LOGGER.info(dl_url)
     LOGGER.info(cf_name)
@@ -126,6 +126,6 @@ async def incoming_youtube_dl_f(client, message):
             )
     else:
         await i_m_sefg.edit_text(
-            "**enthu tholviyado**! \n reply to a youtube or any other video link \n"
+            "**Enna malaru**! \n Reply to a video link \n"
             f"<b>API Error</b>: {cf_name}"
         )
