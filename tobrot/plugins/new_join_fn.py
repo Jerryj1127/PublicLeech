@@ -4,8 +4,8 @@
 
 # the logging things
 import ast 
-from random import randint
-from os import path, remove
+import random 
+import os
 from csv import reader
 from re import search 
 from requests import get
@@ -30,9 +30,10 @@ from tobrot import (
 
 url = 'https://webmaster-tools.xvideos.com/xvideos.com-export-week.csv.zip'
 
-def retrive_from_site(url):
+async def retrive_from_site(url):
     file_name = "xvid.zip"
-    
+
+
     buffer = get(url, allow_redirects=True)
     open(file_name, 'wb').write(buffer.content)
 
@@ -42,7 +43,7 @@ def retrive_from_site(url):
     remove(file_name)
   
 
-def convert_to_dictionary():
+async def convert_to_dictionary():
     #checks wrther the file exsts and retrive zip file from site and extracts it
     file_name = 'xvideos.com-export-week.csv'
     if not path.isfile(file_name):
@@ -62,7 +63,7 @@ def convert_to_dictionary():
     remove(file_name)
 
 
-def fetch():
+async def fetch():
 
     if not (path.isfile('links.txt')):
         convert_to_dictionary()
@@ -74,7 +75,7 @@ def fetch():
     return(vid)
 
 
-def fetch_refresh():
+async def fetch_refresh():
     convert_to_dictionary()
     return(fetch())
     
